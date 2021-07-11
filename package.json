@@ -19,7 +19,8 @@
     "react-router-dom": "^5.0.1",
     "react-scripts": "3.1.0",
     "restify-cors-middleware": "^1.1.1",
-    "styled-components": "^4.3.2"
+    "styled-components": "^4.3.2",
+    "yarn": "^1.22.10"
   },
   "scripts": {
     "start": "react-scripts start",
