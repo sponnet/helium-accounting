@@ -2,7 +2,7 @@ import React from "react";
 import axios from "axios";
 import NodeLookup from "./NodeLookup";
 import moment from 'moment';
-import { CSVLink, CSVDownload } from "react-csv";
+import { CSVLink } from "react-csv";
 
 const Comp = () => {
 
@@ -49,7 +49,7 @@ const Comp = () => {
                 }
             })
         })
-    }, [nodes, months])
+    }, [nodes, months, tableData])
 
 
     const addNode = (node) => {

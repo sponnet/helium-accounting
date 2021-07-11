@@ -14,7 +14,7 @@ const Comp = ({ onNodeAdded }) => {
                 setLookingup(false);
             });
         }
-    }, [nodeName]);
+    }, [nodeName,lookingUp]);
 
     const nodesResult = () => {
         if (!foundNodes) { return (null) }
