@@ -40,8 +40,8 @@ const Comp = () => {
     }, [lookupQueue]);
 
     React.useEffect(() => {
-        nodes.map((node) => {
-            months.map((month) => {
+        nodes.forEach((node) => {
+            months.forEach((month) => {
                 console.log(`${node.name}/${month}`);
                 const key = getTableKey(node, month);
                 if (!tableData[key]) {
@@ -74,7 +74,7 @@ const Comp = () => {
     const nodeList = () => {
 
 
-        nodes.map((node) => {
+        nodes.forEach((node) => {
             const m = months.map((month) => {
                 const key = getTableKey(node, month);
                 return tableData[key];
