@@ -3,25 +3,21 @@
   "version": "0.1.0",
   "private": true,
   "dependencies": {
-    "autobahn": "^20.1.1",
-    "autobahn-browser": "^19.7.3",
-    "axios": "^0.19.0",
-    "bulma": "^0.7.5",
-    "bulma-switch": "^2.0.0",
-    "classnames": "^2.2.6",
-    "ethereum-private-key-to-address": "^0.0.3",
-    "formik": "^1.5.8",
-    "moment": "^2.29.1",
-    "node-sass": "^4.12.0",
-    "react": "^16.12.0",
-    "react-csv": "^2.0.3",
-    "react-dom": "^16.9.0",
-    "react-qr-reader": "^2.2.1",
-    "react-router-dom": "^5.0.1",
-    "react-scripts": "3.1.0",
+    "axios": "^0.27.2",
+    "bulma": "^0.9.3",
+    "bulma-switch": "^2.0.4",
+    "classnames": "^2.3.1",
+    "leaflet": "^1.8.0",
+    "moment": "^2.29.3",
+    "react": "^18.1.0",
+    "react-csv": "^2.2.2",
+    "react-dom": "^18.1.0",
+    "react-leaflet": "^4.0.0",
+    "react-router-dom": "^6.3.0",
+    "react-scripts": "^5.0.1",
     "restify-cors-middleware": "^1.1.1",
-    "styled-components": "^4.3.2",
-    "yarn": "^1.22.10"
+    "sass": "^1.51.0",
+    "yarn": "^1.22.18"
   },
   "scripts": {
     "start": "react-scripts start",
@@ -43,5 +39,8 @@
       "last 1 firefox version",
       "last 1 safari version"
     ]
+  },
+  "devDependencies": {
+    "yarn-upgrade-all": "^0.7.1"
   }
 }
