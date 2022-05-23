@@ -4,7 +4,8 @@ import { MapContainer, TileLayer, Marker, Popup, Tooltip } from 'react-leaflet'
 import 'leaflet/dist/leaflet.css'
 import "./Map.css"
 import { useParams } from "react-router-dom";
-import markerIconPng from "leaflet/dist/images/marker-icon.png"
+import markerIcon_green from "../../../assets/markers/marker-icon-green.png"
+import markerIcon_red from "../../../assets/markers/marker-icon-red.png"
 import L, { Icon } from 'leaflet'
 
 const Comp = () => {
@@ -14,8 +15,6 @@ const Comp = () => {
 
     React.useEffect(() => {
         axios.get(`https://api.helium.io/v1/accounts/${owner}/hotspots`).then(res => {
-        // axios.get(`http://localhost:5001/owner/${owner}`).then(res => {
-            debugger;
             setHotspots(res.data.data);
         })
     }, [])
@@ -28,18 +27,25 @@ const Comp = () => {
 
     const hotspotMarkers = hotspots.map((hotspot) => {
         console.log(hotspot);
-        console.log(markerIconPng);
-        const size = 128;
+        console.log(markerIcon_green);
+        const markerIcon = (hotspot.status.online === "online") ? markerIcon_green : markerIcon_red;
         return (
             <Marker
                 key={hotspot.address}
                 position={[hotspot.lat, hotspot.lng]}
-                icon={new Icon({ iconUrl: markerIconPng, iconSize: [25, 41] })}
+                icon={new Icon({ iconUrl: markerIcon, iconSize: [25, 41] })}
             >
                 <Popup>
+                <a href={`https://explorer.helium.com/hotspots/${hotspot.address}`} rel="noreferrer" target="_blank">
                     {hotspot.name}
+                    </a>
+                    
                 </Popup>
-                <Tooltip direction="right" offset={[10, 10]} opacity={1} permanent>{hotspot.name}</Tooltip>
+                <Tooltip direction="right" offset={[10, 10]} opacity={1} permanent>
+                    
+                {hotspot.name}
+                    
+                    </Tooltip>
             </Marker>
         )
     })
